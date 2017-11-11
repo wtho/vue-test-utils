@@ -115,7 +115,6 @@ describe('mount.mocks', () => {
     wrapper.setData({})
 
     // call methods that will not be triggered by mount, setData and destroy manually
-    wrapper.vm.updated()
     wrapper.vm.deactivated()
     wrapper.vm.activated()
 
@@ -126,7 +125,7 @@ describe('mount.mocks', () => {
     })
     Object.keys(mockedHooks).forEach(hook => {
       console.log('MOCK FOR', hook, mockedHooks[hook].callCount)
-      expect(mockedHooks[hook].calledOnce || hook === 'updated' && mockedHooks[hook].calledTwice).to.be.true
+      expect(mockedHooks[hook].calledOnce).to.be.true
     })
   })
 })
