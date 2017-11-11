@@ -125,7 +125,7 @@ describe('mount.mocks', () => {
       expect(originalHooks[hook].notCalled).to.be.true
     })
     Object.keys(mockedHooks).forEach(hook => {
-      console.log('MOCK FOR', hock, mockedHooks[hook].callCount)
+      console.log('MOCK FOR', hook, mockedHooks[hook].callCount)
       expect(mockedHooks[hook].calledOnce).to.be.true
     })
   })
