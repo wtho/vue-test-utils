@@ -2,7 +2,6 @@
 
 import addSlots from './add-slots'
 import addMocks from './add-mocks'
-import addLifecycleMocks from './add-lifecycle-mocks'
 import addAttrs from './add-attrs'
 import addListeners from './add-listeners'
 import addProvide from './add-provide'
@@ -24,10 +23,6 @@ export default function createConstructor (
 
   if (mountingOptions.mocks) {
     addMocks(mountingOptions.mocks, vue)
-  }
-
-  if (options.mocks) {
-    addLifecycleMocks(options.mocks, component)
   }
 
   if (component.functional) {
