@@ -126,7 +126,7 @@ describe('mount.mocks', () => {
     })
     Object.keys(mockedHooks).forEach(hook => {
       console.log('MOCK FOR', hook, mockedHooks[hook].callCount)
-      expect(mockedHooks[hook].calledOnce).to.be.true
+      expect(mockedHooks[hook].calledOnce || hook === 'updated' && mockedHooks[hook].calledTwice).to.be.true
     })
   })
 })
